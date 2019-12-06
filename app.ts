@@ -23,6 +23,7 @@ app.use(function (err: any, req: any, res: any, next: any) {
 app.all("*", function (req, res, next) {
     next();
 });
+console.log('测试提交')
 openApi(app)
 app.listen(8889, () => {
     mongoose.connect('mongodb://localhost/mydb', (r) => {
