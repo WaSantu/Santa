@@ -17,13 +17,7 @@ let articalSchema = new mongoose.Schema({
         }
     }],
     //文章状态，发布，未发布
-    status:Boolean,
-    comment:[{
-        cid:{
-            type:mongoose.Schema.Types.ObjectId,
-            ref:'santa_comment'
-        }
-    }]
+    status:Boolean
 }, {
     timestamps: {
         createdAt: 'created',

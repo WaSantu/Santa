@@ -41,5 +41,10 @@ declare namespace model {
 
     interface IComment {
         create(content:string,fid:string,tid:string,aid:string):p;
+        detail(id:string):p;
+    }
+
+    interface IConfig {
+        getconfig():Promise<any>;
     }
 }
