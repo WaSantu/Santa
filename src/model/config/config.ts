@@ -15,16 +15,8 @@ export default class ConfigModel implements model.IConfig {
     public model: mongoose.Model < mongoose.Document >
         constructor() {
             this.model = mongoose.model('santa_config', configSchema,'santa_config')
-            this.getconfig().then((r:any)=>{
-                if(!r){
-                    this.init()
-                }
-            })
         }
-    private init() {
-        this.model.create({
-            comment_verify:false
-        })
+    public initconfig(sitename:string,siteclass:string,){
     }
     public getconfig(){
         return new Promise((resolve,reject)=>{
