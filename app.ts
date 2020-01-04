@@ -1,18 +1,21 @@
-import config from './config/config'
+
 import bodyParser from 'body-parser'
 import express from 'express'
 import mongoose from 'mongoose'
 import Log from './unit/logjs/log'
 import expressJwt from 'express-jwt'
+import fs from 'fs'
 import openApi from './src/controller/index'
+const config = require('./config/config')
+let system = JSON.parse(fs.readFileSync('../config/config.json','utf-8'))
 const app = express()
 const log = new Log()
-app.set('token', config.jwtserect)
+app.set('token', system.jwtserect)
 app.use(bodyParser.json());
 app.use(expressJwt({
-    secret: config.jwtserect
+    secret: system.jwtserect
 }).unless({
-    path: config.ignoreJwt
+    path: system.ignoreJwt
 }))
 app.use(function (err: any, req: any, res: any, next: any) {
     if (err) {

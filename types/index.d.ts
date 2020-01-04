@@ -46,5 +46,10 @@ declare namespace model {
 
     interface IConfig {
         getconfig():Promise<any>;
+        createconfig(sitename:string,sitedes:string):Promise<any>;
+    }
+
+    interface Isystem {
+        init():p
     }
 }

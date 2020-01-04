@@ -15,9 +15,9 @@ export const Articalapi = (app:express.Application) => {
         token = token.split(' ')[1]
         const title = req.body.title
         const tag = [{
-            tid:'5de8a3471b312a21dcd738a6'
+            tid:'5e1071692c5a41243039734f'
         },{
-            tid:'5de8a3521b312a21dcd738a7'
+            tid:'5e10717b2c5a412430397350'
         }]
         auth(token,(arg:any)=>{
             console.log(typeof arg._id)

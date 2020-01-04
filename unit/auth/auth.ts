@@ -1,10 +1,11 @@
 import jwt from 'jsonwebtoken'
-import config from '../../config/config'
 import UserModel from '../../src/model/user/user'
 
+
+const config = require('../../config/config')
 const auth = (token:string,cb:(e:object|boolean)=>void) => {
     let Umodel = new UserModel()
-   return jwt.verify(token,config.jwtserect,(e,d:any)=>{
+   return jwt.verify(token,config.jwtserect,(e:any,d:any)=>{
         if(e){
             cb(false)
         }
